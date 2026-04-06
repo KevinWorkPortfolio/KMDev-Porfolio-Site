@@ -9,7 +9,6 @@ if (!container) {
       projects.forEach(p => {
         container.innerHTML += `
           <div class="project-card">
-            <img src="${p.image}" alt="${p.title}">
             <div class="project-content">
               <h3>${p.title}</h3>
               <div class="project-links">
