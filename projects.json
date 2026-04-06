@@ -1,13 +1,11 @@
 [
   {
     "title": "Discord Bot Tematizzato",
-    "image": "https://www.wargamer.com/wp-content/sites/wargamer/2025/12/how-many-pokemon-are-there-550x309.jpg",
     "github": "https://github.com/KevinWorkPortfolio/discord-pokedex-bot",
     "download": "https://github.com/KevinWorkPortfolio/discord-pokedex-bot/archive/refs/heads/main.zip"
   },
   {
     "title": "Altro progetto",
-    "image": "link_immagine",
     "github": "link_repo",
     "download": "link_download"
   }
