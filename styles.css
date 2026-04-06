@@ -1,0 +1,355 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ========================= */
+/* THEME VARIABLES */
+/* ========================= */
+
+:root {
+    --bg: #0b1120;
+    --bg-secondary: #111827;
+    --text: #f3f4f6;
+    --text-soft: #9ca3af;
+    --accent: #3b82f6;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --card: rgba(17, 24, 39, 0.65);
+    --border: rgba(255, 255, 255, 0.08);
+    --blur: blur(18px);
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode {
+    --bg: #f9fafb;
+    --bg-secondary: #ffffff;
+    --text: #111827;
+    --text-soft: #4b5563;
+    --accent: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #2563eb, #6366f1);
+    --card: rgba(255, 255, 255, 0.75);
+    --border: rgba(0, 0, 0, 0.05);
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+h1 span,
+.hero span {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+header {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-soft);
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--accent-gradient);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ========================= */
+/* TOGGLE BUTTON */
+/* ========================= */
+
+.theme-toggle {
+    background: var(--accent-gradient);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+    text-align: center;
+    padding: 160px 0 120px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--text-soft);
+    font-size: 1.1rem;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ========================= */
+/* PROJECTS */
+/* ========================= */
+
+.projects-page h2,
+section.projects h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.3rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background: var(--card);
+    backdrop-filter: var(--blur);
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.35);
+}
+
+.project-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 30px;
+}
+
+.project-content h3 {
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.project-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn.secondary:hover {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+/* ========================= */
+/* CONTACT FORM */
+/* ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 500px;
+}
+
+input,
+textarea {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    color: var(--text-soft);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 80px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 70px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .project-card img {
+        height: 190px;
+    }
+}
+
+/* Rimuove evidenziazione dei campi e del testo */
+input, textarea {
+    background-color: #fff;   /* sfondo bianco uniforme */
+    color: #333;              /* testo scuro */
+    caret-color: #333;        /* colore del cursore */
+    user-select: auto;        /* permette selezione normale */
+}
+
+/* Rimuove eventuale evidenziazione del browser su focus */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #fff;   /* niente cambio colore */
+    color: #333;
+}
+
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
